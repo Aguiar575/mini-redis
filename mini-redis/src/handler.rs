@@ -1,11 +1,11 @@
 use std::io::{Read, Write};
-use std::str::from_utf8;
 use std::net::TcpStream;
+use std::str::from_utf8;
 
-use crate::commands::{Commands};
+use crate::commands::Commands;
 
 pub fn handle_client(mut stream: TcpStream) {
-    let commands = Commands::new();
+    let mut commands = Commands::new(5);
 
     loop {
         let mut buf = [0; 512];
@@ -23,4 +23,3 @@ pub fn handle_client(mut stream: TcpStream) {
         };
     }
 }
-

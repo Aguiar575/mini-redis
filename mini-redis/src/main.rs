@@ -1,6 +1,7 @@
 mod handler;
 mod commands;
 mod cache;
+mod utils;
 
 use std::{
     net::TcpListener,
